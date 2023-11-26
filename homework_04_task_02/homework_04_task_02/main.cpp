@@ -6,12 +6,13 @@ class Address {
 
 private:
     std::string street;
+    int building_number;
     int apartment_number;
     
 public:
     std::string city;
-    int building_number;
     
+    Address () {};
     Address (std::string _city, std::string _street, int _building_number, int _apartment_number) {
         this->city = _city;
         this->street = _street;
@@ -24,8 +25,6 @@ public:
         std::string delimiter = ", ";
         return this->city + delimiter + this->street + delimiter + std::to_string(this->building_number) + delimiter + std::to_string(this->apartment_number) + "\n";
     };
-    
-    
 };
 
 
@@ -53,8 +52,7 @@ int main() {
         }
     
     // создание массива для хранения объектов адресов
-//    Address *addresses[addresses_count];
-    Address addresses[] = {};
+    Address* addresses = new Address[addresses_count];
     
     // заполнение массива объектами адресов
     for (int i = 0; i < addresses_count; ++i) {
@@ -76,9 +74,7 @@ int main() {
     };
 
     // сортировка адресов
-    size_t len = sizeof(addresses)/sizeof(addresses[0]);
-    // Calling sort() function with user defined compare function 'compare_person'
-    std::sort(addresses, addresses+len, &compare_address);
+    std::sort(addresses, addresses+addresses_count, &compare_address);
 
     
     // открытие выходного файла для записи данных
@@ -89,14 +85,12 @@ int main() {
         }
     else {
         target_file << addresses_count << std::endl;
-        // проход по массиву в обратном порядке
-        for (int i = addresses_count-1; i >= 0; --i) {
+        for (int i = 0; i < addresses_count; ++i) {
             target_file << addresses[i].get_formatted_address();
         }
     };
     
     // очистка памяти
-//    for (int i = 0; i < addresses_count; ++i) {
-//        delete addresses[i];
-//    }
+    delete[] addresses;
+    return 0;
 }
