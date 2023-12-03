@@ -61,6 +61,16 @@ class RightTriangle : public Triangle {
 public:
     RightTriangle(int a_, int b_, int c_, int A_, int B_) : Triangle(a_, b_, c_, A_, B_, 90) {
         name = "Прямоугольный треугольник";
+    };
+    bool is_right() override {
+        if (!Triangle::is_right()) {
+            return false;
+        } else {
+            if (this->C != 90) {
+                return false;
+            }
+        };
+        return true;
     }
 };
 
@@ -69,6 +79,20 @@ class IsoscelesTriangle : public Triangle {
 public:
     IsoscelesTriangle(int a_, int b_, int A_, int B_) : Triangle(a_, b_, a_, A_, B_, A_) {
         name = "Равнобедренный треугольник";
+    };
+    bool is_right() override {
+        if (!Triangle::is_right()) {
+            return false;
+        } else {
+            if (this->a != this->c) {
+                return false;
+            } else {
+                if (this->A != this->C) {
+                    return false;
+                };
+            };
+        };
+        return true;
     }
 };
 
@@ -77,6 +101,16 @@ class EquilateralTriangle : public IsoscelesTriangle {
 public:
     EquilateralTriangle(int a_) : IsoscelesTriangle(a_, a_, 60, 60) {
         name = "Равносторонний треугольник";
+    };
+    bool is_right() override {
+        if (!IsoscelesTriangle::is_right()) {
+            return false;
+        } else {
+            if (this->a != this->b || this->A != 60 || this->B != 60 || this->C !=60) {
+                return false;
+            };
+        };
+        return true;
     }
 };
 
@@ -109,6 +143,16 @@ class Rectangle : public Quadrilateral {
 public:
     Rectangle(int a_, int b_) : Quadrilateral(a_, b_, a_, b_, 90, 90, 90, 90) {
         name = "Прямоугольник";
+    };
+    bool is_right() override {
+        if (!Quadrilateral::is_right()) {
+            return false;
+        } else {
+            if (this->a != this->c || this->b != this->d || this->A != 90 || this->B != 90 || this->C !=90 || this->D != 90) {
+                return false;
+            };
+        };
+        return true;
     }
 };
 
@@ -117,6 +161,16 @@ class Square : public Rectangle {
 public:
     Square(int a_) : Rectangle(a_, a_) {
         name = "Квадрат";
+    };
+    bool is_right() override {
+        if (!Rectangle::is_right()) {
+            return false;
+        } else {
+            if (this->a != this->b) {
+                return false;
+            };
+        };
+        return true;
     }
 };
 
@@ -125,6 +179,16 @@ class Parallelogram : public Quadrilateral {
 public:
     Parallelogram(int a_, int b_, int A_, int B_) : Quadrilateral(a_, b_, a_, b_, A_, B_, A_, B_) {
         name = "Параллелограмм";
+    };
+    bool is_right() override {
+        if (!Quadrilateral::is_right()) {
+            return false;
+        } else {
+            if (this->a != this->c || this->b != this->d || this->A != this->C || this->B != this->D) {
+                return false;
+            };
+        };
+        return true;
     }
 };
 
@@ -133,6 +197,16 @@ class Rhombus : public Parallelogram {
 public:
     Rhombus(int a_, int A_, int B_) : Parallelogram(a_, a_, A_, B_) {
         name = "Ромб";
+    };
+    bool is_right() override {
+        if (!Parallelogram::is_right()) {
+            return false;
+        } else {
+            if (this->a != this->b) {
+                return false;
+            };
+        };
+        return true;
     }
 };
 
