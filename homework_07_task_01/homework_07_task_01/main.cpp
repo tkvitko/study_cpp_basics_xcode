@@ -18,7 +18,7 @@ int add(int num1, int num2) {
 int main(int argc, const char * argv[]) {
     
 #ifndef MODE
-    std::cout << "Необходимо определить MODE" << std::endl;
+#error "Should define MODE"
 #endif
     
 #if MODE == 0
@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
     
 # elif MODE == 1
     int user_num1 = 0, user_num2 = 0;
-    std::cout << "Работаю в режиме тренировк" << std::endl;
+    std::cout << "Работаю в боевом режиме" << std::endl;
     std::cout << "Введите число 1: " << std::endl;
     std::cin >> user_num1;
     std::cout << "Введите число 2: " << std::endl;
