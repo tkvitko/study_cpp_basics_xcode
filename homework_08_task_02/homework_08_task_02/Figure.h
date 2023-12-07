@@ -1,16 +1,13 @@
 //
-//  Fugure.hpp
+//  Figure.h
 //  homework_06_task_03
 //
 //  Created by tkvitko on 03.12.2023.
 //
 
-#ifndef Fugure_hpp
-#define Fugure_hpp
-
-#include <stdio.h>
+#ifndef Figure_h
+#define Figure_h
 #include <iostream>
-#include <string>
 
 class Figure {
     
@@ -22,5 +19,9 @@ public:
     virtual void print_info() {
         std::cout << this->name << ":\n";
     };
+    virtual bool is_right() {
+        return true;
+    };
 };
-#endif /* Fugure_hpp */
+
+#endif /* Figure_h */
