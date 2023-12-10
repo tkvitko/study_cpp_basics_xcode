@@ -15,14 +15,18 @@
 #include "Square.hpp"
 #include "Parallelogram.hpp"
 #include "Rhombus.hpp"
-
+#include "FigureCharacteristicsException.hpp"
 
 
 int main(int argc, const char * argv[]) {
 
-    Triangle triangle = Triangle(10, 20, 30, 50, 60, 70);
-    Figure* ptr_triangle = &triangle;
-    ptr_triangle->print_info();
+    try {
+        Triangle triangle = Triangle(10, 20, 30, 50, 60, 70);
+        Figure* ptr_triangle = &triangle;
+        ptr_triangle->print_info();
+    } catch (const BadDimention& e) {
+        std::cout << e.what() << std::endl;
+    }
     
     RightTriangle right_triangle = RightTriangle(10, 20, 30, 50, 60);
     Figure* ptr_right_triangle = &right_triangle;

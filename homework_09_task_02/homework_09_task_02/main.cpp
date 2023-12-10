@@ -78,7 +78,8 @@ public:
     
     Fraction operator++() {
         Fraction one_as_fraction = Fraction(1, 1);
-        return *this + one_as_fraction;
+        *this = *this + one_as_fraction;
+        return *this;
     };
     
     Fraction operator++(int) {
@@ -89,7 +90,8 @@ public:
     
     Fraction operator--() {
         Fraction one_as_fraction = Fraction(1, 1);
-        return *this - one_as_fraction;
+        *this = *this - one_as_fraction;
+        return *this;
     };
     
     Fraction operator--(int) {

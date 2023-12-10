@@ -11,19 +11,18 @@
 #include "FigureCharacteristicsException.hpp"
 
 Triangle::Triangle(int a_, int b_, int c_, int A_, int B_, int C_) {
+    name = "Треугольник";
+    sides_count = 3;
+    a = a_;
+    b = b_;
+    c = c_;
+    A = A_;
+    B = B_;
+    C = C_;
     
     bool is_right = this->is_right();
-    if (is_right) {
-        name = "Треугольник";
-        sides_count = 3;
-        a = a_;
-        b = b_;
-        c = c_;
-        A = A_;
-        B = B_;
-        C = C_;
-    } else {
-        throw BadDimention();
+    if (!is_right) {
+        throw BadDimention("Ошибка");
     }
 };
 
