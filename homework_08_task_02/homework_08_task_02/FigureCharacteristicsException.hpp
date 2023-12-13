@@ -11,11 +11,15 @@
 #include <stdio.h>
 #include <string>
 
-class BadDimention : public std::invalid_argument {
+
+class BadDimention : public std::domain_error {
 public:
-    BadDimention(const std::string& what_arg): std::invalid_argument(what_arg) {}
+    char* reason_;
+    BadDimention(char* reason) : std::domain_error(reason) {
+        this->reason_ = reason;
+    };
     const char* what() const noexcept {
-        return "Ошибка создания фигуры";
+        return this->reason_;
     }
 };
 

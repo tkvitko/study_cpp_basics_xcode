@@ -28,37 +28,69 @@ int main(int argc, const char * argv[]) {
         std::cout << e.what() << std::endl;
     }
     
-    RightTriangle right_triangle = RightTriangle(10, 20, 30, 50, 60);
-    Figure* ptr_right_triangle = &right_triangle;
-    ptr_right_triangle->print_info();
+    try {
+        RightTriangle right_triangle = RightTriangle(10, 20, 30, 50, 60);
+        Figure* ptr_right_triangle = &right_triangle;
+        ptr_right_triangle->print_info();
+    } catch (const BadDimention& e) {
+        std::cout << e.what() << std::endl;
+    }
     
-    IsoscelesTriangle isosceles_triangle = IsoscelesTriangle(10, 20, 50, 60);
-    Figure* ptr_isosceles_triangle = &isosceles_triangle;
-    ptr_isosceles_triangle->print_info();
+    try {
+        IsoscelesTriangle isosceles_triangle = IsoscelesTriangle(10, 20, 50, 60);
+        Figure* ptr_isosceles_triangle = &isosceles_triangle;
+        ptr_isosceles_triangle->print_info();
+    } catch (const BadDimention& e) {
+        std::cout << e.what() << std::endl;
+    }
     
-    EquilateralTriangle equilateral_triangle = EquilateralTriangle(30);
-    Figure* ptr_equilateral_triangle = &equilateral_triangle;
-    ptr_equilateral_triangle->print_info();
+    try {
+        EquilateralTriangle equilateral_triangle = EquilateralTriangle(30);
+        Figure* ptr_equilateral_triangle = &equilateral_triangle;
+        ptr_equilateral_triangle->print_info();
+    } catch (const BadDimention& e) {
+        std::cout << e.what() << std::endl;
+    }
     
-    Quadrilateral quadrilateral = Quadrilateral(10, 20, 30, 40, 50, 60, 70, 80);
-    Figure* ptr_quadrilateral = &quadrilateral;
-    ptr_quadrilateral->print_info();
+    try {
+        Quadrilateral quadrilateral = Quadrilateral(10, 20, 30, 40, 50, 60, 70, 80);
+        Figure* ptr_quadrilateral = &quadrilateral;
+        ptr_quadrilateral->print_info();
+    } catch (const BadDimention& e) {
+        std::cout << e.what() << std::endl;
+    }
     
-    Rectangle rectangle = Rectangle(10, 20);
-    Figure* ptr_rectangle = &rectangle;
-    ptr_rectangle->print_info();
+    try {
+        Rectangle rectangle = Rectangle(10, 20);
+        Figure* ptr_rectangle = &rectangle;
+        ptr_rectangle->print_info();
+    } catch (const BadDimention& e) {
+        std::cout << e.what() << std::endl;
+    }
     
-    Square square = Square(20);
-    Figure* ptr_square = &square;
-    ptr_square->print_info();
+    try {
+        Square square = Square(20);
+        Figure* ptr_square = &square;
+        ptr_square->print_info();
+    } catch (const BadDimention& e) {
+        std::cout << e.what() << std::endl;
+    }
     
-    Parallelogram parallelogram = Parallelogram(20, 30, 30, 40);
-    Figure* ptr_parallelogram = &parallelogram;
-    ptr_parallelogram->print_info();
+    try {
+        Parallelogram parallelogram = Parallelogram(20, 30, 30, 40);
+        Figure* ptr_parallelogram = &parallelogram;
+        ptr_parallelogram->print_info();
+    } catch (const BadDimention& e) {
+        std::cout << e.what() << std::endl;
+    }
     
-    Rhombus rhombus = Rhombus(30, 30, 40);
-    Figure* ptr_rhombus = &rhombus;
-    ptr_rhombus->print_info();
+    try {
+        Rhombus rhombus = Rhombus(30, 30, 40);
+        Figure* ptr_rhombus = &rhombus;
+        ptr_rhombus->print_info();
+    } catch (const BadDimention& e) {
+        std::cout << e.what() << std::endl;
+    }
 
     return 0;
 }

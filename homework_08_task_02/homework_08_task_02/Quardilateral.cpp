@@ -7,15 +7,33 @@
 
 #include <iostream>
 #include "Quardilateral.hpp"
-#include "Triangle.hpp"
+#include "FigureCharacteristicsException.hpp"
 
-Quadrilateral::Quadrilateral(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_) : Triangle(a_, b_, c_, A_, B_, C_) {
+Quadrilateral::Quadrilateral(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_) {
     name = "Четырехугольник";
     sides_count = 4;
+    a = a_;
+    b = b_;
+    c = c_;
+    A = A_;
+    B = B_;
+    C = C_;
     d = d_;
     D = D_;
+    
+    bool is_right = this->is_right();
+    if (!is_right) {
+        throw BadDimention("Ошибка создания фигуры. Причина: сумма углов не равна 360");
+    }
 };
 
 void Quadrilateral::print_info() {
-    std::cout << this->name << ":\n" << "Стороны: a=" << this->a << " b=" << this->b << " c=" << this->c << " d=" << this->d << "\nУглы: A=" << this->A << " B=" << this->B << " C=" << this->C << " D=" << this->D << "\n\n";
+    std::cout << this->name << " (стороны " << this->a << ", " << this->b << ", " << this->c << ", " << this->d << "; углы " << this->A << ", " << this->B << ", " << this->C << ", " << this->D << ") создан\n";
+}
+
+bool Quadrilateral::is_right() {
+    if (this->A + this->B + this->C + this->D == 360) {
+        return true;
+    }
+    return false;
 }

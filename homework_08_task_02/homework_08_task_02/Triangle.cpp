@@ -22,12 +22,12 @@ Triangle::Triangle(int a_, int b_, int c_, int A_, int B_, int C_) {
     
     bool is_right = this->is_right();
     if (!is_right) {
-        throw BadDimention("Ошибка");
+        throw BadDimention("Ошибка создания фигуры. Причина: сумма углов не равна 180");
     }
 };
 
 void Triangle::print_info() {
-    std::cout << this->name << ":\n" << "Стороны: a=" << this->a << " b=" << this->b << " c=" << this->c << "\nУглы: A=" << this->A << " B=" << this->B << " C=" << this->C << "\n\n";
+    std::cout << this->name << " (стороны " << this->a << ", " << this->b << ", " << this->c << "; углы " << this->A << ", " << this->B << ", " << this->C << ") создан\n";
 };
 
 
