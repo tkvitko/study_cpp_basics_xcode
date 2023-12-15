@@ -1,0 +1,713 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		51D2AAB672814A48AE30D585 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7BD56BE265BA43DEA5CCF00E /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				0C026E5ADD979EFBED048B42 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				AD97B05A4106415581779AB7 /* PBXTargetDependency */,
+				33FA9C3D4CB646EF877F7069 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		FA44CB89F8B94B43B052EDA1 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 229EEA132D614419839C872E /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				C910EAB00066E24E30A4065D /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		20AE90F9777A4AA29BB5053C /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/main.cpp */ = {isa = PBXBuildFile; fileRef = F550FE4B9C444519AC09540B /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/main.cpp */; };
+		DFC992C98012480899312030 /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = F07381F345BB45A2BFD5A38C /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/CMakeLists.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		031A556152134B69A4DD1462 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		0817E0997DFC4FDDBBE2AEE4 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		7868AA617E9C488A99BC37EF /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		B888E8EDED144548A361275D /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		7F1AEA26B4054BD8A0DDD79C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 364CDF7944A64923A0C9F044 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA44CB89F8B94B43B052EDA1;
+			remoteInfo = ZERO_CHECK;
+		};
+		C193AED04C8A40708E1ABAAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 364CDF7944A64923A0C9F044 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA44CB89F8B94B43B052EDA1;
+			remoteInfo = ZERO_CHECK;
+		};
+		EC754E084F944141A881D0AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 364CDF7944A64923A0C9F044 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4BAE7112B4C40E691E313F8;
+			remoteInfo = my_first_cmake_program;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0FB929CD28774BD8944DC165 /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		4EB5ADD2C0734C7986AF515F /* my_first_cmake_program */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = my_first_cmake_program; sourceTree = BUILT_PRODUCTS_DIR; };
+		F07381F345BB45A2BFD5A38C /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		F550FE4B9C444519AC09540B /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		893FDF0CAE6640B793FE710B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		152F1CDD8B374AC3814A183A = {
+			isa = PBXGroup;
+			children = (
+				9EAD344C32A74A01908F1B91 /* my_first_cmake_program */,
+				DDEB1533584644ABB6F71350 /* ALL_BUILD */,
+				9A84124912ED446B89642B5C /* Products */,
+				5D7A484F0C574364AEA894B6 /* Frameworks */,
+				EA397BE66B504615935DF8BC /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		5D7A484F0C574364AEA894B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E3AAF3C5416426B96EEAA1B /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		9A84124912ED446B89642B5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EB5ADD2C0734C7986AF515F /* my_first_cmake_program */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9EAD344C32A74A01908F1B91 /* my_first_cmake_program */ = {
+			isa = PBXGroup;
+			children = (
+				AA891B2FF8894C47A1EE071C /* Source Files */,
+				F07381F345BB45A2BFD5A38C /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/CMakeLists.txt */,
+			);
+			name = my_first_cmake_program;
+			sourceTree = "<group>";
+		};
+		AA891B2FF8894C47A1EE071C /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				F550FE4B9C444519AC09540B /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		DDEB1533584644ABB6F71350 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				8E3AAF3C5416426B96EEAA1B /* CMake Rules */,
+				0FB929CD28774BD8944DC165 /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		EA397BE66B504615935DF8BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4BAE7112B4C40E691E313F8 /* my_first_cmake_program */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88DE8253D08A4DCCA82A37A2 /* Build configuration list for PBXNativeTarget "my_first_cmake_program" */;
+			buildPhases = (
+				D3DB418A72224892B3D2FA40 /* Sources */,
+				893FDF0CAE6640B793FE710B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D07802389CB44F988875483 /* PBXTargetDependency */,
+			);
+			name = my_first_cmake_program;
+			productName = my_first_cmake_program;
+			productReference = 4EB5ADD2C0734C7986AF515F /* my_first_cmake_program */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		364CDF7944A64923A0C9F044 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 401ED1DAC663410A981B8C72 /* Build configuration list for PBXProject "my_first_cmake_project" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				0817E0997DFC4FDDBBE2AEE4 /* Debug */,
+				7868AA617E9C488A99BC37EF /* Release */,
+				B888E8EDED144548A361275D /* MinSizeRel */,
+				031A556152134B69A4DD1462 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 152F1CDD8B374AC3814A183A;
+			projectDirPath = /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01;
+			projectRoot = "";
+			targets = (
+				51D2AAB672814A48AE30D585 /* ALL_BUILD */,
+				FA44CB89F8B94B43B052EDA1 /* ZERO_CHECK */,
+				F4BAE7112B4C40E691E313F8 /* my_first_cmake_program */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C026E5ADD979EFBED048B42 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+/Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/CMakeFiles/ALL_BUILD			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		C910EAB00066E24E30A4065D /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+/Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/CMakeFiles/ZERO_CHECK			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build
+  make -f /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build
+  make -f /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build
+  make -f /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build
+  make -f /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3DB418A72224892B3D2FA40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20AE90F9777A4AA29BB5053C /* /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/main.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33FA9C3D4CB646EF877F7069 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA44CB89F8B94B43B052EDA1 /* ZERO_CHECK */;
+			targetProxy = 7F1AEA26B4054BD8A0DDD79C /* PBXContainerItemProxy */;
+		};
+		9D07802389CB44F988875483 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA44CB89F8B94B43B052EDA1 /* ZERO_CHECK */;
+			targetProxy = C193AED04C8A40708E1ABAAA /* PBXContainerItemProxy */;
+		};
+		AD97B05A4106415581779AB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4BAE7112B4C40E691E313F8 /* my_first_cmake_program */;
+			targetProxy = EC754E084F944141A881D0AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1497E22F37C34EB98D7029A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/build;
+			};
+			name = Release;
+		};
+		3F109DF481EE47F098AF41F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		508EEC7FA61B4A62920AED7E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		5B87079A029C48B881EB32B7 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/build;
+			};
+			name = MinSizeRel;
+		};
+		621104546A8A4218A8716318 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/build;
+			};
+			name = RelWithDebInfo;
+		};
+		6BB49F8164C24B93BD47CB3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		763B499F7EA149F895F7D09A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		8BA18257E0F44B909726ECE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		91DDAA48EF814137994AEE5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = my_first_cmake_program;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/build/my_first_cmake_program.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		93521D7749CE4AA78326B85E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SYMROOT = /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/build;
+			};
+			name = Debug;
+		};
+		96B412E967FC4691A89882E3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = my_first_cmake_program;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/build/my_first_cmake_program.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		A7A4D932CAD34D7A87E5D80B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = my_first_cmake_program;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/build/my_first_cmake_program.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		A97B6C5C13B745EFB8E5166B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C2AE56589F134D2B9448FF6A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		DEC670ED5E164827A7E22444 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "   ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = my_first_cmake_program;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/tkvitko/c/netology/xcode_projects/homework_10_task_01/homework_10_task_01/build/build/my_first_cmake_program.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		E6588C8D6CA34C53B18EE41A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		229EEA132D614419839C872E /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F109DF481EE47F098AF41F5 /* Debug */,
+				763B499F7EA149F895F7D09A /* Release */,
+				508EEC7FA61B4A62920AED7E /* MinSizeRel */,
+				E6588C8D6CA34C53B18EE41A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		401ED1DAC663410A981B8C72 /* Build configuration list for PBXProject "my_first_cmake_project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93521D7749CE4AA78326B85E /* Debug */,
+				1497E22F37C34EB98D7029A1 /* Release */,
+				5B87079A029C48B881EB32B7 /* MinSizeRel */,
+				621104546A8A4218A8716318 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7BD56BE265BA43DEA5CCF00E /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BB49F8164C24B93BD47CB3F /* Debug */,
+				8BA18257E0F44B909726ECE3 /* Release */,
+				C2AE56589F134D2B9448FF6A /* MinSizeRel */,
+				A97B6C5C13B745EFB8E5166B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		88DE8253D08A4DCCA82A37A2 /* Build configuration list for PBXNativeTarget "my_first_cmake_program" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEC670ED5E164827A7E22444 /* Debug */,
+				91DDAA48EF814137994AEE5C /* Release */,
+				96B412E967FC4691A89882E3 /* MinSizeRel */,
+				A7A4D932CAD34D7A87E5D80B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 364CDF7944A64923A0C9F044 /* Project object */;
+}

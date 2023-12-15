@@ -1,0 +1,3 @@
+/Users/tkvitko/c/netology/xcode_projects/homework_10_task_02/homework_10_task_02/build/CMakeFiles/geometry_fantasy.dir
+/Users/tkvitko/c/netology/xcode_projects/homework_10_task_02/homework_10_task_02/build/CMakeFiles/ALL_BUILD.dir
+/Users/tkvitko/c/netology/xcode_projects/homework_10_task_02/homework_10_task_02/build/CMakeFiles/ZERO_CHECK.dir

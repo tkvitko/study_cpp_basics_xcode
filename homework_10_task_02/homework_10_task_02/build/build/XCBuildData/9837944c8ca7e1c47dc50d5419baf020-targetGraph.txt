@@ -1,0 +1,7 @@
+Target dependency graph (3 targets)
+ZERO_CHECK in geometry_fantasy, no dependencies
+geometry_fantasy in geometry_fantasy, depends on:
+ZERO_CHECK in geometry_fantasy (explicit)
+ALL_BUILD in geometry_fantasy, depends on:
+geometry_fantasy in geometry_fantasy (explicit)
+ZERO_CHECK in geometry_fantasy (explicit)

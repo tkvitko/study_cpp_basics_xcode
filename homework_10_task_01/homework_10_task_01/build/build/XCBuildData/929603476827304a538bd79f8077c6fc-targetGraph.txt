@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+ZERO_CHECK in my_first_cmake_project, no dependencies
+my_first_cmake_program in my_first_cmake_project, depends on:
+ZERO_CHECK in my_first_cmake_project (explicit)
