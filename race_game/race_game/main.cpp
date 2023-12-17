@@ -7,18 +7,26 @@
 
 #include <iostream>
 
+enum class PlayerTypes {
+    land,
+    air,
+    unknown
+};
+
 class Vehicle {
     // Транспортное средство
 protected:
-    std::string name;
     int speed;  // скорость
+public:
+    std::string name;
+    PlayerTypes type = PlayerTypes::unknown;
+    Vehicle() {};
+    Vehicle(int speed_) {
+        speed = speed_;
+    };
     virtual float get_time_for_distance (int distance) {
         return 0.0;
     };
-public:
-    Vehicle(int speed_) {
-        speed = speed_;
-    }
 };
 
 class LandVehicle : public Vehicle {
@@ -30,6 +38,7 @@ protected:
     float second_rest_time = 0; // время отдыха на второй остановке
     
 public:
+    PlayerTypes type = PlayerTypes::land;
     LandVehicle(int speed_, int time_before_rest_, float rest_time_,
                 float first_rest_time_, float second_rest_time_) : Vehicle(speed_){
         time_before_rest = time_before_rest_;
@@ -96,6 +105,7 @@ public:
 class AirVehicle : public Vehicle {
     // Воздушное транспортное средство
 public:
+    PlayerTypes type = PlayerTypes::air;
     AirVehicle(int speed_) : Vehicle(speed_) {}
 };
 
@@ -135,34 +145,153 @@ public:
     }
 };
 
+class NotEnoughPlayers : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "Должно быть зарегистрировано хотя бы 2 транспортных средства";
+    }
+};
+
+class WrongPlayerType : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "Попытка зарегистрировать неверный типа транспортного средства";
+    }
+};
+
+struct Player {
+    Vehicle* vehicle;
+    float time;
+};
+
+bool compare_results(Player &player1, Player &player2)
+{
+    if (player2.time > player1.time) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+class Game {
+    // Игра
+protected:
+    int distance = 0;
+    int max_players = 0;
+    int players_number = 0;
+    Player* players = new Player[max_players];
+    
+public:
+    Game(int distance_, int max_players_) {
+        distance = distance_;
+        max_players = max_players_;
+    }
+    
+    Player* get_players() {
+        std::sort(this->players, this->players+players_number, &compare_results);
+        return this->players;
+    }
+
+    void play() {
+        if (this->players_number < 2) {
+            throw NotEnoughPlayers();
+        } else {
+            for (int i=0; i<=players_number-1; ++i) {
+                this->players[i].time = this->players[i].vehicle->get_time_for_distance(this->distance);
+            }
+        }
+    }
+};
+
+class LandGame : public Game {
+    // наземная гонка
+public:
+    LandGame(int distance_, int max_players_) : Game(distance_, max_players_) {}
+    void add_player(LandVehicle* player) {
+        if (player->type != PlayerTypes::land) {
+            throw WrongPlayerType();
+        } else {
+            this->players_number += 1;
+            this->players[players_number - 1].vehicle = player;
+            this->players[players_number - 1].time = 0;
+        }
+    }
+};
+
+class AirGame : public Game {
+    // наземная гонка
+public:
+    AirGame(int distance_, int max_players_) : Game(distance_, max_players_) {}
+    void add_player(AirVehicle* player) {
+        if (player->type != PlayerTypes::air) {
+            throw WrongPlayerType();
+        } else {
+            this->players_number += 1;
+            this->players[players_number - 1].vehicle = player;
+            this->players[players_number - 1].time = 0;
+        }
+    }
+};
+
+class MixedGame : public Game {
+    // наземная гонка
+public:
+    MixedGame(int distance_, int max_players_) : Game(distance_, max_players_) {}
+    void add_player(Vehicle* player) {
+        this->players_number += 1;
+        this->players[players_number - 1].vehicle = player;
+        this->players[players_number - 1].time = 0;
+    }
+};
+
 int main(int argc, const char * argv[]) {
     
     int example_distance = 1000;
     int test_distance = 4500;
     
-    LandVehicle test_land_vehicle = LandVehicle(100, 6, 3, 0, 0);
-    std::cout << test_land_vehicle.get_time_for_distance(example_distance) << std::endl;
+    // Тестирование расчета времени
     
-    FastCamel fast_camel = FastCamel();
-    std::cout << fast_camel.get_time_for_distance(test_distance) << std::endl;
+//    LandVehicle test_land_vehicle = LandVehicle(100, 6, 3, 0, 0);
+//    std::cout << test_land_vehicle.get_time_for_distance(example_distance) << std::endl;
+//
+//    FastCamel fast_camel = FastCamel();
+//    std::cout << fast_camel.get_time_for_distance(test_distance) << std::endl;
+//
+//    Centaur centaur = Centaur();
+//    std::cout << centaur.get_time_for_distance(test_distance) << std::endl;
+//
+//    Camel camel = Camel();
+//    std::cout << camel.get_time_for_distance(test_distance) << std::endl;
+//
+//    AllTerrainBoots boots = AllTerrainBoots();
+//    std::cout << boots.get_time_for_distance(test_distance) << std::endl;
+//
+//    Broom broom = Broom();
+//    std::cout << broom.get_time_for_distance(test_distance) << std::endl;
+//
+//    MagicCarpet carpet = MagicCarpet();
+//    std::cout << carpet.get_time_for_distance(test_distance) << std::endl;
+//
+//    Eagle eagle = Eagle();
+//    std::cout << eagle.get_time_for_distance(test_distance) << std::endl;
     
-    Centaur centaur = Centaur();
-    std::cout << centaur.get_time_for_distance(test_distance) << std::endl;
-
+    // Тестирование процесса гонки
     Camel camel = Camel();
-    std::cout << camel.get_time_for_distance(test_distance) << std::endl;
-
-    AllTerrainBoots boots = AllTerrainBoots();
-    std::cout << boots.get_time_for_distance(test_distance) << std::endl;
+    Centaur centaur = Centaur();
+    FastCamel fast_camel = FastCamel();
     
-    Broom broom = Broom();
-    std::cout << broom.get_time_for_distance(test_distance) << std::endl;
+//    AirGame game = AirGame(test_distance, 7);
+//    LandGame game = LandGame(test_distance, 7);
+    MixedGame game = MixedGame(test_distance, 7);
 
-    MagicCarpet carpet = MagicCarpet();
-    std::cout << carpet.get_time_for_distance(test_distance) << std::endl;
 
-    Eagle eagle = Eagle();
-    std::cout << eagle.get_time_for_distance(test_distance) << std::endl;
-    
+    game.add_player(&camel);
+    game.add_player(&centaur);
+    game.add_player(&fast_camel);
+    game.play();
+    Player* results = game.get_players();
+    for (int i=0; i<3; ++i) {
+        std::cout << results[i].vehicle->name << " " << results[i].time << std::endl;
+    }
     return 0;
 }
