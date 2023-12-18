@@ -166,6 +166,13 @@ public:
     };
 };
 
+class PlayerAlreadyREgistered : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "Этот тип уже зарегистрирован";
+    };
+};
+
 struct Player {
     Vehicle* vehicle;
     float time;
@@ -188,6 +195,22 @@ protected:
     Player* players = new Player[max_players];
     PlayerTypes type = PlayerTypes::unknown;
     
+private:
+    void _add_player(Vehicle* player) {
+        this->check_player_alredy_registered(player);
+        this->players_number += 1;
+        this->players[players_number - 1].vehicle = player;
+        this->players[players_number - 1].time = 0;
+    }
+    
+    void check_player_alredy_registered(Vehicle* player) {
+        for (int i=0; i<players_number; ++i){
+            if (this->players[i].vehicle->name == player->name) {
+                throw PlayerAlreadyREgistered();
+            }
+        }
+    }
+    
 public:
     int players_number = 0;
     
@@ -207,14 +230,19 @@ public:
         return result_str;
     }
     
-    void add_player(Vehicle* player) {
-//        if (player->type != this->type) {
-        if (player->type != PlayerTypes::unknown) { // временно заменено на unknown, пока непонятно как сделать верно
+    void add_player(LandVehicle* player) {
+        if (this->type == PlayerTypes::air) {
             throw WrongPlayerType();
         } else {
-            this->players_number += 1;
-            this->players[players_number - 1].vehicle = player;
-            this->players[players_number - 1].time = 0;
+            this->_add_player(player);
+        }
+    }
+    
+    void add_player(AirVehicle* player) {
+        if (this->type == PlayerTypes::land) {
+            throw WrongPlayerType();
+        } else {
+            this->_add_player(player);
         }
     }
     
@@ -302,9 +330,11 @@ int main(int argc, const char * argv[]) {
     Camel camel = Camel();
     Centaur centaur = Centaur();
     FastCamel fast_camel = FastCamel();
+    Eagle eagle = Eagle();
     Game test_game = Game(test_distance, 7, PlayerTypes::land);
 
     test_game.add_player(&camel);
+//    test_game.add_player(&eagle);
     test_game.add_player(&centaur);
     test_game.add_player(&fast_camel);
     test_game.play();
@@ -344,9 +374,9 @@ int main(int argc, const char * argv[]) {
             break;
     };
     Game game = Game(distance, 7, game_type);
-
+    bool game_played = false;
     // регистрация участников
-    while (true) {
+    while (!game_played) {
         std::cout << game.get_game_info() << std::endl;
         std::cout << "Должно быть зарегистрировано хотя бы 2 транспортных средства" << std::endl;
         std::cout << "1. Зарегистрировать транспорт." << std::endl;
@@ -363,47 +393,58 @@ int main(int argc, const char * argv[]) {
                 std::cout << "0. Закончить регистрацию" << std::endl;
                 std::cout << "Выбете транспорт: ";
                 std::cin >> choise;
-                switch (choise) {
-                    case 0:
-                        end = true;
-                        break;
-                    case 1: {
-                        AllTerrainBoots boots = AllTerrainBoots();
-                        game.add_player(&boots);}
-                        break;
-                    case 2: {
-                        Broom broom = Broom();
-                        game.add_player(&broom);}
-                        break;
-                    case 3: {
-                        Camel camel = Camel();
-                        game.add_player(&camel);}
-                        break;
-                    case 4: {
-                        Centaur centaur = Centaur();
-                        game.add_player(&centaur);}
-                        break;
-                    case 5: {
-                        Eagle eagle = Eagle();
-                        game.add_player(&eagle);}
-                        break;
-                    case 6: {
-                        FastCamel fast_camel = FastCamel();
-                        game.add_player(&fast_camel);}
-                        break;
-                    case 7: {
-                        MagicCarpet carpet = MagicCarpet();
-                        game.add_player(&carpet);}
-                        break;
+                try {
+                    switch (choise) {
+                        case 0:
+                            end = true;
+                            break;
+                        case 1: {
+                            AllTerrainBoots boots = AllTerrainBoots();
+                            game.add_player(&boots);}
+                            break;
+                        case 2: {
+                            Broom broom = Broom();
+                            game.add_player(&broom);}
+                            break;
+                        case 3: {
+                            Camel camel = Camel();
+                            game.add_player(&camel);}
+                            break;
+                        case 4: {
+                            Centaur centaur = Centaur();
+                            game.add_player(&centaur);}
+                            break;
+                        case 5: {
+                            Eagle eagle = Eagle();
+                            game.add_player(&eagle);}
+                            break;
+                        case 6: {
+                            FastCamel fast_camel = FastCamel();
+                            game.add_player(&fast_camel);}
+                            break;
+                        case 7: {
+                            MagicCarpet carpet = MagicCarpet();
+                            game.add_player(&carpet);}
+                            break;
+                    }
+                    
+                } catch (WrongPlayerType& e) {
+                    std::cout << e.what() << std::endl;
+                } catch (PlayerAlreadyREgistered& e) {
+                    std::cout << e.what() << std::endl;
                 }
             }
         } else if (choise == 2) {
-            game.play();
-            Player* results = game.get_players();
-                for (int i=0; i<game.players_number; ++i) {
-                    std::cout << results[i].vehicle->name << " " << results[i].time << std::endl;
-                }
-            break;
+            try {
+                game.play();
+                Player* results = game.get_players();
+                    for (int i=0; i<game.players_number; ++i) {
+                        std::cout << results[i].vehicle->name << " " << results[i].time << std::endl;
+                    }
+                game_played = true;
+            } catch (NotEnoughPlayers& e) {
+                std::cout << e.what() << std::endl;
+            }
         }
     }
     return 0;
