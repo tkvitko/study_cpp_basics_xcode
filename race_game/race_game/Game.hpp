@@ -71,6 +71,10 @@ public:
         type = type_;
     }
     
+    ~Game() {
+        delete this->players;
+    }
+    
     std::string get_game_info() {
         std::string result_str = "\n\nРасстояние: " + std::to_string(distance) + "\n";
         result_str += "Зарегистрированные транспортные средства: ";
