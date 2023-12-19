@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-enum class PlayerTypes {
+enum class SurfaceType {
     land,
     air,
     unknown,
@@ -18,15 +18,17 @@ class Vehicle {
     // Транспортное средство
 protected:
     int speed;  // скорость
+    std::string name;   // имя
 public:
-    std::string name;
-    PlayerTypes type = PlayerTypes::unknown;
     Vehicle() {};
     Vehicle(int speed_) {
         speed = speed_;
     };
     virtual float get_time_for_distance (int distance) {
         return 0.0;
+    };
+    std::string get_name() {
+        return this->name;
     };
 };
 
@@ -39,7 +41,7 @@ protected:
     float second_rest_time = 0; // время отдыха на второй остановке
     
 public:
-    PlayerTypes type = PlayerTypes::land;
+    SurfaceType type = SurfaceType::land;
     LandVehicle(int speed_, int time_before_rest_, float rest_time_,
                 float first_rest_time_, float second_rest_time_) : Vehicle(speed_){
         time_before_rest = time_before_rest_;
@@ -106,7 +108,7 @@ public:
 class AirVehicle : public Vehicle {
     // Воздушное транспортное средство
 public:
-    PlayerTypes type = PlayerTypes::air;
+    SurfaceType type = SurfaceType::air;
     AirVehicle(int speed_) : Vehicle(speed_) {}
 };
 
@@ -121,11 +123,11 @@ public:
         if (distance < 1000) {
             return time;
         } else if (distance < 5000) {
-            return time * 0.97;
+            return time * 0.97f;
         } else if (distance < 10000) {
-            return time * 0.9;
+            return time * 0.9f;
         } else {
-            return time * 0.95;
+            return time * 0.95f;
         }
     }
 };
@@ -155,21 +157,21 @@ public:
 class NotEnoughPlayers : public std::exception {
 public:
     const char* what() const noexcept override {
-        return "Должно быть зарегистрировано хотя бы 2 транспортных средства";
+        return "\nВнимание: Должно быть зарегистрировано хотя бы 2 транспортных средства";
     };
 };
 
 class WrongPlayerType : public std::exception {
 public:
     const char* what() const noexcept override {
-        return "Попытка зарегистрировать неверный типа транспортного средства";
+        return "\nВнимание: Попытка зарегистрировать неверный типа транспортного средства";
     };
 };
 
 class PlayerAlreadyREgistered : public std::exception {
 public:
     const char* what() const noexcept override {
-        return "Этот тип уже зарегистрирован";
+        return "\nВнимание: Этот тип уже зарегистрирован";
     };
 };
 
@@ -193,7 +195,7 @@ protected:
     int distance = 0;
     int max_players = 0;
     Player* players = new Player[max_players];
-    PlayerTypes type = PlayerTypes::unknown;
+    SurfaceType type = SurfaceType::unknown;
     
 private:
     void _add_player(Vehicle* player) {
@@ -205,7 +207,7 @@ private:
     
     void check_player_alredy_registered(Vehicle* player) {
         for (int i=0; i<players_number; ++i){
-            if (this->players[i].vehicle->name == player->name) {
+            if (this->players[i].vehicle->get_name() == player->get_name()) {
                 throw PlayerAlreadyREgistered();
             }
         }
@@ -214,24 +216,24 @@ private:
 public:
     int players_number = 0;
     
-    Game(int distance_, int max_players_, PlayerTypes type_) {
+    Game(int distance_, int max_players_, SurfaceType type_) {
         distance = distance_;
         max_players = max_players_;
         type = type_;
     }
     
     std::string get_game_info() {
-        std::string result_str = "Расстояние: " + std::to_string(distance) + "\n";
+        std::string result_str = "\n\nРасстояние: " + std::to_string(distance) + "\n";
         result_str += "Зарегистрированные транспортные средства: ";
         for (int i=0; i<players_number; ++i) {
-            result_str += this->players[i].vehicle->name;
+            result_str += this->players[i].vehicle->get_name();
             result_str += " ";
         }
         return result_str;
     }
     
     void add_player(LandVehicle* player) {
-        if (this->type == PlayerTypes::air) {
+        if (this->type == SurfaceType::air) {
             throw WrongPlayerType();
         } else {
             this->_add_player(player);
@@ -239,7 +241,7 @@ public:
     }
     
     void add_player(AirVehicle* player) {
-        if (this->type == PlayerTypes::land) {
+        if (this->type == SurfaceType::land) {
             throw WrongPlayerType();
         } else {
             this->_add_player(player);
@@ -331,7 +333,7 @@ int main(int argc, const char * argv[]) {
     Centaur centaur = Centaur();
     FastCamel fast_camel = FastCamel();
     Eagle eagle = Eagle();
-    Game test_game = Game(test_distance, 7, PlayerTypes::land);
+    Game test_game = Game(test_distance, 7, SurfaceType::land);
 
     test_game.add_player(&camel);
 //    test_game.add_player(&eagle);
@@ -340,7 +342,7 @@ int main(int argc, const char * argv[]) {
     test_game.play();
     Player* results = test_game.get_players();
     for (int i=0; i<3; ++i) {
-        std::cout << results[i].vehicle->name << " " << results[i].time << std::endl;
+        std::cout << results[i].vehicle->get_name() << " " << results[i].time << std::endl;
     }
     
     // Продакшен-игра
@@ -359,16 +361,16 @@ int main(int argc, const char * argv[]) {
     std::cin >> distance;
 
     // Создание объекта гонки
-    PlayerTypes game_type = PlayerTypes::unknown;
+    SurfaceType game_type = SurfaceType::unknown;
     switch (game_type_number) {
         case 1:
-            game_type = PlayerTypes::land;
+            game_type = SurfaceType::land;
             break;
         case 2:
-            game_type = PlayerTypes::air;
+            game_type = SurfaceType::air;
             break;
         case 3:
-            game_type = PlayerTypes::mixed;
+            game_type = SurfaceType::mixed;
             break;
         default:
             break;
@@ -439,7 +441,7 @@ int main(int argc, const char * argv[]) {
                 game.play();
                 Player* results = game.get_players();
                     for (int i=0; i<game.players_number; ++i) {
-                        std::cout << results[i].vehicle->name << " " << results[i].time << std::endl;
+                        std::cout << results[i].vehicle->get_name() << " " << results[i].time << std::endl;
                     }
                 game_played = true;
             } catch (NotEnoughPlayers& e) {
