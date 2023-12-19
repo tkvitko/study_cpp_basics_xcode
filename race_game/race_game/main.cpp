@@ -7,299 +7,20 @@
 
 #include <iostream>
 
-enum class SurfaceType {
-    land,
-    air,
-    unknown,
-    mixed
-};
+#include "Camel.hpp"
+#include "FastCamel.hpp"
+#include "Centaur.hpp"
+#include "AllTerrainBoots.hpp"
+#include "Eagle.hpp"
+#include "Broom.hpp"
+#include "MagicCarpet.hpp"
 
-class Vehicle {
-    // Транспортное средство
-protected:
-    int speed;  // скорость
-    std::string name;   // имя
-public:
-    Vehicle() {};
-    Vehicle(int speed_) {
-        speed = speed_;
-    };
-    virtual float get_time_for_distance (int distance) {
-        return 0.0;
-    };
-    std::string get_name() {
-        return this->name;
-    };
-};
-
-class LandVehicle : public Vehicle {
-    // Наземное транспортное средство
-protected:
-    int time_before_rest; // время движения до отдыха
-    float rest_time = 0;    //  общее время отдыха
-    float first_rest_time = 0;  // время отдыха на первой остановке
-    float second_rest_time = 0; // время отдыха на второй остановке
-    
-public:
-    SurfaceType type = SurfaceType::land;
-    LandVehicle(int speed_, int time_before_rest_, float rest_time_,
-                float first_rest_time_, float second_rest_time_) : Vehicle(speed_){
-        time_before_rest = time_before_rest_;
-        rest_time = rest_time_;
-        first_rest_time = first_rest_time_;
-        second_rest_time = second_rest_time_;
-    };
-    float get_time_for_distance (int distance) override {
-        float time = distance / speed; // время без учета остановок
-        
-        float stops_count = time / time_before_rest;   // количество остановок
-        if (stops_count != int(stops_count)) {
-            stops_count = int(stops_count); // если поделилось не нацело, округляем вниз
-        } else {
-            stops_count -= 1;   // если поделилось нацело, отнимаем 1 остановку (уже достиг финиша)
-        }
-        
-        // добавление времени на остановки
-        for (int i=1; i<=stops_count; ++i) {
-            if (i == 1) {
-                if (first_rest_time != 0) {time += first_rest_time;} else {time += rest_time;}
-            } else if (i == 2) {
-                if (second_rest_time != 0) {time += second_rest_time;} else {time += rest_time;}
-            } else {
-                time += rest_time;
-            }
-        };
-        return time;
-    }
-};
-
-class Camel : public LandVehicle {
-    // Верблюд
-public:
-    Camel() : LandVehicle(10, 30, 8, 5, 0) {
-        name = "Вербюд";
-    }
-};
-
-class FastCamel : public LandVehicle {
-    // Верблюд-быстроход
-public:
-    FastCamel() : LandVehicle(40, 10, 8, 5, 6.5) {
-        name = "Верблюд быстроход";
-    }
-};
-
-class Centaur : public LandVehicle {
-    // Кентавр
-public:
-    Centaur() : LandVehicle(15, 8, 2, 0, 0) {
-        name = "Кентавр";
-    }
-};
-
-class AllTerrainBoots : public LandVehicle {
-    // Ботинки-вездеходы
-public:
-    AllTerrainBoots() : LandVehicle(6, 60, 5, 10, 0) {
-        name = "Ботинки_вездеходы";
-    }
-};
-
-class AirVehicle : public Vehicle {
-    // Воздушное транспортное средство
-public:
-    SurfaceType type = SurfaceType::air;
-    AirVehicle(int speed_) : Vehicle(speed_) {}
-};
-
-class MagicCarpet : public AirVehicle {
-    // Ковер самолет
-public:
-    MagicCarpet() : AirVehicle(10) {
-        name = "Ковер_самолет";
-    };
-    float get_time_for_distance (int distance) override {
-        float time = distance / speed;
-        if (distance < 1000) {
-            return time;
-        } else if (distance < 5000) {
-            return time * 0.97f;
-        } else if (distance < 10000) {
-            return time * 0.9f;
-        } else {
-            return time * 0.95f;
-        }
-    }
-};
-
-class Eagle : public AirVehicle {
-    // Орел
-public:
-    Eagle() : AirVehicle(8) {
-        name = "Орел";
-    };
-    float get_time_for_distance (int distance) override {
-        return 0.94 * distance / speed;
-    }
-};
-
-class Broom : public AirVehicle {
-    // Метла
-public:
-    Broom() : AirVehicle(20) {
-        name = "Метла";
-    };
-    float get_time_for_distance (int distance) override {
-        return (1 - (distance/1000)/100.0) * distance / speed;
-    }
-};
-
-class NotEnoughPlayers : public std::exception {
-public:
-    const char* what() const noexcept override {
-        return "\nВнимание: Должно быть зарегистрировано хотя бы 2 транспортных средства";
-    };
-};
-
-class WrongPlayerType : public std::exception {
-public:
-    const char* what() const noexcept override {
-        return "\nВнимание: Попытка зарегистрировать неверный типа транспортного средства";
-    };
-};
-
-class PlayerAlreadyREgistered : public std::exception {
-public:
-    const char* what() const noexcept override {
-        return "\nВнимание: Этот тип уже зарегистрирован";
-    };
-};
-
-struct Player {
-    Vehicle* vehicle;
-    float time;
-};
-
-bool compare_results(Player &player1, Player &player2)
-{
-    if (player2.time > player1.time) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
-
-class Game {
-    // Игра
-protected:
-    int distance = 0;
-    int max_players = 0;
-    Player* players = new Player[max_players];
-    SurfaceType type = SurfaceType::unknown;
-    
-private:
-    void _add_player(Vehicle* player) {
-        this->check_player_alredy_registered(player);
-        this->players_number += 1;
-        this->players[players_number - 1].vehicle = player;
-        this->players[players_number - 1].time = 0;
-    }
-    
-    void check_player_alredy_registered(Vehicle* player) {
-        for (int i=0; i<players_number; ++i){
-            if (this->players[i].vehicle->get_name() == player->get_name()) {
-                throw PlayerAlreadyREgistered();
-            }
-        }
-    }
-    
-public:
-    int players_number = 0;
-    
-    Game(int distance_, int max_players_, SurfaceType type_) {
-        distance = distance_;
-        max_players = max_players_;
-        type = type_;
-    }
-    
-    std::string get_game_info() {
-        std::string result_str = "\n\nРасстояние: " + std::to_string(distance) + "\n";
-        result_str += "Зарегистрированные транспортные средства: ";
-        for (int i=0; i<players_number; ++i) {
-            result_str += this->players[i].vehicle->get_name();
-            result_str += " ";
-        }
-        return result_str;
-    }
-    
-    void add_player(LandVehicle* player) {
-        if (this->type == SurfaceType::air) {
-            throw WrongPlayerType();
-        } else {
-            this->_add_player(player);
-        }
-    }
-    
-    void add_player(AirVehicle* player) {
-        if (this->type == SurfaceType::land) {
-            throw WrongPlayerType();
-        } else {
-            this->_add_player(player);
-        }
-    }
-    
-    Player* get_players() {
-        std::sort(this->players, this->players+players_number, &compare_results);
-        return this->players;
-    }
-
-    void play() {
-        if (this->players_number < 2) {
-            throw NotEnoughPlayers();
-        } else {
-            for (int i=0; i<=players_number-1; ++i) {
-                this->players[i].time = this->players[i].vehicle->get_time_for_distance(this->distance);
-            }
-        }
-    }
-};
-
-class UserDialig {
-private:
-    void print_enumerated_choises(std::string* choises, int size) {
-        for (int i=0; i<size; ++i) {
-            std::cout << i+1 << ". " << choises[i] << std::endl;
-        }
-    };
-    
-public:
-    void print_game_types(){
-        std::string game_types[] = {
-            "Гонка для наземного транспорта",
-            "Гонка для воздушного транспорта",
-            "Гонка для наземного и воздушного транспорта"
-        };
-        this->print_enumerated_choises(game_types, 3);
-    };
-    void print_vehicle_types(){
-        std::string vehicle_types[] = {
-            "Ботинки-вездеходы",
-            "Метла",
-            "Верблюд",
-            "Кентавр",
-            "Орёл",
-            "Верблюд-быстроход",
-            "Ковёр-самолёт"
-        };
-        this->print_enumerated_choises(vehicle_types, 7);
-    };
-};
-
+#include "Game.hpp"
+#include "UserDialog.hpp"
 
 
 int main(int argc, const char * argv[]) {
     
-    int example_distance = 1000;
     int test_distance = 4500;
     
     // Тестирование расчета времени
@@ -331,17 +52,13 @@ int main(int argc, const char * argv[]) {
     // Тестирование процесса гонки
     Camel camel = Camel();
     Centaur centaur = Centaur();
-    FastCamel fast_camel = FastCamel();
-    Eagle eagle = Eagle();
     Game test_game = Game(test_distance, 7, SurfaceType::land);
 
     test_game.add_player(&camel);
-//    test_game.add_player(&eagle);
     test_game.add_player(&centaur);
-    test_game.add_player(&fast_camel);
     test_game.play();
     Player* results = test_game.get_players();
-    for (int i=0; i<3; ++i) {
+    for (int i=0; i<2; ++i) {
         std::cout << results[i].vehicle->get_name() << " " << results[i].time << std::endl;
     }
     

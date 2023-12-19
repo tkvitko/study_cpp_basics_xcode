@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		A499AFE42B2DE3280059FAFD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFE32B2DE3280059FAFD /* main.cpp */; };
+		A499AFEC2B31E2BC0059FAFD /* Vehicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFEA2B31E2BB0059FAFD /* Vehicle.cpp */; };
+		A499AFEF2B31E31E0059FAFD /* LandVehicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFED2B31E31E0059FAFD /* LandVehicle.cpp */; };
+		A499AFF22B31E3740059FAFD /* SurfaceType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFF02B31E3740059FAFD /* SurfaceType.cpp */; };
+		A499AFF52B31E3E40059FAFD /* Camel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFF32B31E3E40059FAFD /* Camel.cpp */; };
+		A499AFF82B31E4080059FAFD /* FastCamel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFF62B31E4080059FAFD /* FastCamel.cpp */; };
+		A499AFFB2B31E4260059FAFD /* Centaur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFF92B31E4260059FAFD /* Centaur.cpp */; };
+		A499AFFE2B31E46C0059FAFD /* AllTerrainBoots.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFFC2B31E46C0059FAFD /* AllTerrainBoots.cpp */; };
+		A499B0012B31E4A20059FAFD /* AirVehicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFFF2B31E4A20059FAFD /* AirVehicle.cpp */; };
+		A499B0042B31E4C00059FAFD /* Eagle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499B0022B31E4C00059FAFD /* Eagle.cpp */; };
+		A499B0072B31E4DF0059FAFD /* Broom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499B0052B31E4DF0059FAFD /* Broom.cpp */; };
+		A499B00D2B31E5270059FAFD /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499B00B2B31E5270059FAFD /* Player.cpp */; };
+		A499B0102B31E54A0059FAFD /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499B00E2B31E54A0059FAFD /* Game.cpp */; };
+		A499B0132B31E5C70059FAFD /* UserDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499B0112B31E5C70059FAFD /* UserDialog.cpp */; };
+		A499B0162B31E6820059FAFD /* MagicCarpet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499B0142B31E6820059FAFD /* MagicCarpet.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +39,34 @@
 /* Begin PBXFileReference section */
 		A499AFE02B2DE3280059FAFD /* race_game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = race_game; sourceTree = BUILT_PRODUCTS_DIR; };
 		A499AFE32B2DE3280059FAFD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A499AFEA2B31E2BB0059FAFD /* Vehicle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vehicle.cpp; sourceTree = "<group>"; };
+		A499AFEB2B31E2BB0059FAFD /* Vehicle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vehicle.hpp; sourceTree = "<group>"; };
+		A499AFED2B31E31E0059FAFD /* LandVehicle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LandVehicle.cpp; sourceTree = "<group>"; };
+		A499AFEE2B31E31E0059FAFD /* LandVehicle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LandVehicle.hpp; sourceTree = "<group>"; };
+		A499AFF02B31E3740059FAFD /* SurfaceType.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SurfaceType.cpp; sourceTree = "<group>"; };
+		A499AFF12B31E3740059FAFD /* SurfaceType.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SurfaceType.hpp; sourceTree = "<group>"; };
+		A499AFF32B31E3E40059FAFD /* Camel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camel.cpp; sourceTree = "<group>"; };
+		A499AFF42B31E3E40059FAFD /* Camel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camel.hpp; sourceTree = "<group>"; };
+		A499AFF62B31E4080059FAFD /* FastCamel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FastCamel.cpp; sourceTree = "<group>"; };
+		A499AFF72B31E4080059FAFD /* FastCamel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FastCamel.hpp; sourceTree = "<group>"; };
+		A499AFF92B31E4260059FAFD /* Centaur.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Centaur.cpp; sourceTree = "<group>"; };
+		A499AFFA2B31E4260059FAFD /* Centaur.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Centaur.hpp; sourceTree = "<group>"; };
+		A499AFFC2B31E46C0059FAFD /* AllTerrainBoots.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AllTerrainBoots.cpp; sourceTree = "<group>"; };
+		A499AFFD2B31E46C0059FAFD /* AllTerrainBoots.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AllTerrainBoots.hpp; sourceTree = "<group>"; };
+		A499AFFF2B31E4A20059FAFD /* AirVehicle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AirVehicle.cpp; sourceTree = "<group>"; };
+		A499B0002B31E4A20059FAFD /* AirVehicle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AirVehicle.hpp; sourceTree = "<group>"; };
+		A499B0022B31E4C00059FAFD /* Eagle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Eagle.cpp; sourceTree = "<group>"; };
+		A499B0032B31E4C00059FAFD /* Eagle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Eagle.hpp; sourceTree = "<group>"; };
+		A499B0052B31E4DF0059FAFD /* Broom.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Broom.cpp; sourceTree = "<group>"; };
+		A499B0062B31E4DF0059FAFD /* Broom.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Broom.hpp; sourceTree = "<group>"; };
+		A499B00B2B31E5270059FAFD /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		A499B00C2B31E5270059FAFD /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		A499B00E2B31E54A0059FAFD /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		A499B00F2B31E54A0059FAFD /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		A499B0112B31E5C70059FAFD /* UserDialog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UserDialog.cpp; sourceTree = "<group>"; };
+		A499B0122B31E5C70059FAFD /* UserDialog.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UserDialog.hpp; sourceTree = "<group>"; };
+		A499B0142B31E6820059FAFD /* MagicCarpet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MagicCarpet.cpp; sourceTree = "<group>"; };
+		A499B0152B31E6820059FAFD /* MagicCarpet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MagicCarpet.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +100,34 @@
 			isa = PBXGroup;
 			children = (
 				A499AFE32B2DE3280059FAFD /* main.cpp */,
+				A499AFEA2B31E2BB0059FAFD /* Vehicle.cpp */,
+				A499AFEB2B31E2BB0059FAFD /* Vehicle.hpp */,
+				A499AFED2B31E31E0059FAFD /* LandVehicle.cpp */,
+				A499AFEE2B31E31E0059FAFD /* LandVehicle.hpp */,
+				A499AFF02B31E3740059FAFD /* SurfaceType.cpp */,
+				A499AFF12B31E3740059FAFD /* SurfaceType.hpp */,
+				A499AFF32B31E3E40059FAFD /* Camel.cpp */,
+				A499AFF42B31E3E40059FAFD /* Camel.hpp */,
+				A499AFF62B31E4080059FAFD /* FastCamel.cpp */,
+				A499AFF72B31E4080059FAFD /* FastCamel.hpp */,
+				A499AFF92B31E4260059FAFD /* Centaur.cpp */,
+				A499AFFA2B31E4260059FAFD /* Centaur.hpp */,
+				A499AFFC2B31E46C0059FAFD /* AllTerrainBoots.cpp */,
+				A499AFFD2B31E46C0059FAFD /* AllTerrainBoots.hpp */,
+				A499AFFF2B31E4A20059FAFD /* AirVehicle.cpp */,
+				A499B0002B31E4A20059FAFD /* AirVehicle.hpp */,
+				A499B0022B31E4C00059FAFD /* Eagle.cpp */,
+				A499B0032B31E4C00059FAFD /* Eagle.hpp */,
+				A499B0052B31E4DF0059FAFD /* Broom.cpp */,
+				A499B0062B31E4DF0059FAFD /* Broom.hpp */,
+				A499B00B2B31E5270059FAFD /* Player.cpp */,
+				A499B00C2B31E5270059FAFD /* Player.hpp */,
+				A499B00E2B31E54A0059FAFD /* Game.cpp */,
+				A499B00F2B31E54A0059FAFD /* Game.hpp */,
+				A499B0112B31E5C70059FAFD /* UserDialog.cpp */,
+				A499B0122B31E5C70059FAFD /* UserDialog.hpp */,
+				A499B0142B31E6820059FAFD /* MagicCarpet.cpp */,
+				A499B0152B31E6820059FAFD /* MagicCarpet.hpp */,
 			);
 			path = race_game;
 			sourceTree = "<group>";
@@ -119,7 +189,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A499B0162B31E6820059FAFD /* MagicCarpet.cpp in Sources */,
+				A499B0132B31E5C70059FAFD /* UserDialog.cpp in Sources */,
+				A499B0012B31E4A20059FAFD /* AirVehicle.cpp in Sources */,
+				A499AFF52B31E3E40059FAFD /* Camel.cpp in Sources */,
+				A499B0042B31E4C00059FAFD /* Eagle.cpp in Sources */,
+				A499AFFE2B31E46C0059FAFD /* AllTerrainBoots.cpp in Sources */,
+				A499AFEC2B31E2BC0059FAFD /* Vehicle.cpp in Sources */,
+				A499AFEF2B31E31E0059FAFD /* LandVehicle.cpp in Sources */,
 				A499AFE42B2DE3280059FAFD /* main.cpp in Sources */,
+				A499B00D2B31E5270059FAFD /* Player.cpp in Sources */,
+				A499AFF22B31E3740059FAFD /* SurfaceType.cpp in Sources */,
+				A499B0072B31E4DF0059FAFD /* Broom.cpp in Sources */,
+				A499AFFB2B31E4260059FAFD /* Centaur.cpp in Sources */,
+				A499AFF82B31E4080059FAFD /* FastCamel.cpp in Sources */,
+				A499B0102B31E54A0059FAFD /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
