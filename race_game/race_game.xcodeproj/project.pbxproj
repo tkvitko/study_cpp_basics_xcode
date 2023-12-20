@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A413AC842B33212E00D1FDDC /* Exceptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A413AC822B33212E00D1FDDC /* Exceptions.cpp */; };
 		A499AFE42B2DE3280059FAFD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFE32B2DE3280059FAFD /* main.cpp */; };
 		A499AFEC2B31E2BC0059FAFD /* Vehicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFEA2B31E2BB0059FAFD /* Vehicle.cpp */; };
 		A499AFEF2B31E31E0059FAFD /* LandVehicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A499AFED2B31E31E0059FAFD /* LandVehicle.cpp */; };
@@ -37,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A413AC822B33212E00D1FDDC /* Exceptions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Exceptions.cpp; sourceTree = "<group>"; };
+		A413AC832B33212E00D1FDDC /* Exceptions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Exceptions.hpp; sourceTree = "<group>"; };
 		A499AFE02B2DE3280059FAFD /* race_game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = race_game; sourceTree = BUILT_PRODUCTS_DIR; };
 		A499AFE32B2DE3280059FAFD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A499AFEA2B31E2BB0059FAFD /* Vehicle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vehicle.cpp; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				A499B0122B31E5C70059FAFD /* UserDialog.hpp */,
 				A499B0142B31E6820059FAFD /* MagicCarpet.cpp */,
 				A499B0152B31E6820059FAFD /* MagicCarpet.hpp */,
+				A413AC822B33212E00D1FDDC /* Exceptions.cpp */,
+				A413AC832B33212E00D1FDDC /* Exceptions.hpp */,
 			);
 			path = race_game;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A499B0162B31E6820059FAFD /* MagicCarpet.cpp in Sources */,
+				A413AC842B33212E00D1FDDC /* Exceptions.cpp in Sources */,
 				A499B0132B31E5C70059FAFD /* UserDialog.cpp in Sources */,
 				A499B0012B31E4A20059FAFD /* AirVehicle.cpp in Sources */,
 				A499AFF52B31E3E40059FAFD /* Camel.cpp in Sources */,

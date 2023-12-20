@@ -9,32 +9,24 @@
 #define Game_hpp
 
 #include <stdio.h>
+#include <algorithm>
+
 #include "Player.hpp"
 #include "SurfaceType.hpp"
 #include "Vehicle.hpp"
 #include "LandVehicle.hpp"
 #include "AirVehicle.hpp"
-#include "Game.cpp"
+#include "Exceptions.hpp"
 
-class NotEnoughPlayers : public std::exception {
-public:
-    const char* what() const noexcept override {
-        return "\nВнимание: Должно быть зарегистрировано хотя бы 2 транспортных средства";
-    };
-};
 
-class WrongPlayerType : public std::exception {
-public:
-    const char* what() const noexcept override {
-        return "\nВнимание: Попытка зарегистрировать неверный типа транспортного средства";
-    };
-};
 
-class PlayerAlreadyREgistered : public std::exception {
-public:
-    const char* what() const noexcept override {
-        return "\nВнимание: Этот тип уже зарегистрирован";
-    };
+inline bool compare_results(Player &player1, Player &player2)
+{
+    if (player2.time > player1.time) {
+        return 1;
+    } else {
+        return 0;
+    }
 };
 
 class Game {
@@ -72,7 +64,7 @@ public:
     }
     
     ~Game() {
-        delete this->players;
+        delete[] this->players;
     }
     
     std::string get_game_info() {
@@ -102,7 +94,7 @@ public:
     }
     
     Player* get_players() {
-//        std::sort(this->players, this->players+players_number, &compare_results);
+        std::sort(this->players, this->players+players_number, &compare_results);
         return this->players;
     }
 

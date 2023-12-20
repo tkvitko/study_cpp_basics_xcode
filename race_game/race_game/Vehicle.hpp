@@ -22,7 +22,7 @@ public:
         speed = speed_;
     };
     virtual float get_time_for_distance (int distance) {
-        return 0.0;
+        return 0.0f;
     };
     std::string get_name() {
         return this->name;

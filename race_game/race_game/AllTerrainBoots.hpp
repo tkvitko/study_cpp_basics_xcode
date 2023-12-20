@@ -15,7 +15,7 @@ class AllTerrainBoots : public LandVehicle {
     // Ботинки-вездеходы
 public:
     AllTerrainBoots() : LandVehicle(6, 60, 5, 10, 0) {
-        name = "Ботинки_вездеходы";
+        name = "Ботинки вездеходы";
     }
 };
 

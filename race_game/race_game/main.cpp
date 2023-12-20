@@ -118,32 +118,32 @@ int main(int argc, const char * argv[]) {
                             end = true;
                             break;
                         case 1: {
-                            AllTerrainBoots boots = AllTerrainBoots();
-                            game.add_player(&boots);}
+                            AllTerrainBoots* boots = new AllTerrainBoots();
+                            game.add_player(boots);}
                             break;
                         case 2: {
-                            Broom broom = Broom();
-                            game.add_player(&broom);}
+                            Broom* broom = new Broom();
+                            game.add_player(broom);}
                             break;
                         case 3: {
-                            Camel camel = Camel();
-                            game.add_player(&camel);}
+                            Camel* camel = new Camel();
+                            game.add_player(camel);}
                             break;
                         case 4: {
-                            Centaur centaur = Centaur();
-                            game.add_player(&centaur);}
+                            Centaur* centaur = new Centaur();
+                            game.add_player(centaur);}
                             break;
                         case 5: {
-                            Eagle eagle = Eagle();
-                            game.add_player(&eagle);}
+                            Eagle* eagle = new Eagle();
+                            game.add_player(eagle);}
                             break;
                         case 6: {
-                            FastCamel fast_camel = FastCamel();
-                            game.add_player(&fast_camel);}
+                            FastCamel* fast_camel = new FastCamel();
+                            game.add_player(fast_camel);}
                             break;
                         case 7: {
-                            MagicCarpet carpet = MagicCarpet();
-                            game.add_player(&carpet);}
+                            MagicCarpet* carpet = new MagicCarpet();
+                            game.add_player(carpet);}
                             break;
                     }
                     
