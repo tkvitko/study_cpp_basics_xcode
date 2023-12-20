@@ -31,7 +31,8 @@ Game::Game(int distance_, int max_players_, SurfaceType type_) {
 }
 
 Game::~Game() {
-    delete[] this->players;
+//    delete[] this->players;
+    this->clear_players();
 }
 
 std::string Game::get_game_info() {
@@ -63,6 +64,10 @@ void Game::add_player(AirVehicle* player) {
 Player* Game::get_players() {
     std::sort(this->players, this->players+players_number, &compare_results);
     return this->players;
+}
+
+void Game::clear_players() {
+    delete this->players;
 }
 
 void Game::play() {

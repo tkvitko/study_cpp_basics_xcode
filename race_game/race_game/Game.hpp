@@ -49,6 +49,7 @@ public:
     std::string get_game_info();
     void add_player(LandVehicle* player);
     void add_player(AirVehicle* player);
+    void clear_players();
     Player* get_players();
     void play();
 };
