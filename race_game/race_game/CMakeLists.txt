@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.22.0)
 project(race)
-FILE(GLOB Sources *.cpp)
-add_executable(race ${Sources})
+add_library(RaceLib SHARED AirVehicle.cpp Broom.hpp Centaur.hpp FastCamel.cpp LandVehicle.hpp SurfaceType.cpp Vehicle.hpp AirVehicle.hpp Eagle.cpp FastCamel.hpp MagicCarpet.cpp SurfaceType.hpp AllTerrainBoots.cpp Camel.cpp Eagle.hpp Game.cpp MagicCarpet.hpp UserDialog.cpp AllTerrainBoots.hpp Camel.hpp Exceptions.cpp Game.hpp Player.cpp UserDialog.hpp Broom.cpp Centaur.cpp Exceptions.hpp LandVehicle.cpp Player.hpp Vehicle.cpp)
+add_executable(race main.cpp)
+target_link_libraries(race RaceLib)
