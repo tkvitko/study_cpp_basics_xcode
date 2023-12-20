@@ -16,7 +16,7 @@ class AirVehicle : public Vehicle {
     // Воздушное транспортное средство
 public:
     SurfaceType type = SurfaceType::air;
-    AirVehicle(int speed_) : Vehicle(speed_) {}
+    AirVehicle(int speed_);
 };
 
 #endif /* AirVehicle_hpp */

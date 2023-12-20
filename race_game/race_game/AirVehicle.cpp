@@ -6,3 +6,5 @@
 //
 
 #include "AirVehicle.hpp"
+
+AirVehicle::AirVehicle(int speed_) : Vehicle(speed_) {}

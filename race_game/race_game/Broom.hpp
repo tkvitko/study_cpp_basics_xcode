@@ -14,12 +14,8 @@
 class Broom : public AirVehicle {
     // Метла
 public:
-    Broom() : AirVehicle(20) {
-        name = "Метла";
-    };
-    float get_time_for_distance (int distance) override {
-        return (1 - (distance/1000)/100.0) * distance / speed;
-    }
+    Broom();
+    float get_time_for_distance (int distance) override;
 };
 
 #endif /* Broom_hpp */

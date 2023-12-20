@@ -6,3 +6,7 @@
 //
 
 #include "Camel.hpp"
+
+Camel::Camel() : LandVehicle(10, 30, 8, 5, 0) {
+    name = "Вербюд";
+}

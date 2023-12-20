@@ -6,3 +6,7 @@
 //
 
 #include "AllTerrainBoots.hpp"
+
+AllTerrainBoots::AllTerrainBoots() : LandVehicle(6, 60, 5, 10, 0) {
+    name = "Ботинки вездеходы";
+}

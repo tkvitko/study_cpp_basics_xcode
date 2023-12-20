@@ -13,23 +13,17 @@
 
 class NotEnoughPlayers : public std::exception {
 public:
-    const char* what() const noexcept override {
-        return "\nВнимание: Должно быть зарегистрировано хотя бы 2 транспортных средства";
-    };
+    const char* what() const noexcept override;
 };
 
 class WrongPlayerType : public std::exception {
 public:
-    const char* what() const noexcept override {
-        return "\nВнимание: Попытка зарегистрировать неверный типа транспортного средства";
-    };
+    const char* what() const noexcept override;
 };
 
-class PlayerAlreadyREgistered : public std::exception {
+class PlayerAlreadyRegistered : public std::exception {
 public:
-    const char* what() const noexcept override {
-        return "\nВнимание: Этот тип уже зарегистрирован";
-    };
+    const char* what() const noexcept override;
 };
 
 #endif /* Exceptions_hpp */

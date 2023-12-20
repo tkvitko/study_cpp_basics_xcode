@@ -14,9 +14,7 @@
 class Camel : public LandVehicle {
     // Верблюд
 public:
-    Camel() : LandVehicle(10, 30, 8, 5, 0) {
-        name = "Вербюд";
-    }
+    Camel();
 };
 
 #endif /* Camel_hpp */

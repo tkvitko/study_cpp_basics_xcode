@@ -14,9 +14,7 @@
 class Centaur : public LandVehicle {
     // Кентавр
 public:
-    Centaur() : LandVehicle(15, 8, 2, 0, 0) {
-        name = "Кентавр";
-    }
+    Centaur();
 };
 
 #endif /* Centaur_hpp */

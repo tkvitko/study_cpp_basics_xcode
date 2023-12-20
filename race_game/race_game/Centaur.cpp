@@ -6,3 +6,7 @@
 //
 
 #include "Centaur.hpp"
+
+Centaur::Centaur() : LandVehicle(15, 8, 2, 0, 0) {
+    name = "Кентавр";
+}

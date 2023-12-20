@@ -21,49 +21,8 @@
 
 int main(int argc, const char * argv[]) {
     
-    int test_distance = 4500;
-    
-    // Тестирование расчета времени
-    
-//    LandVehicle test_land_vehicle = LandVehicle(100, 6, 3, 0, 0);
-//    std::cout << test_land_vehicle.get_time_for_distance(example_distance) << std::endl;
-//
-//    FastCamel fast_camel = FastCamel();
-//    std::cout << fast_camel.get_time_for_distance(test_distance) << std::endl;
-//
-//    Centaur centaur = Centaur();
-//    std::cout << centaur.get_time_for_distance(test_distance) << std::endl;
-//
-//    Camel camel = Camel();
-//    std::cout << camel.get_time_for_distance(test_distance) << std::endl;
-//
-//    AllTerrainBoots boots = AllTerrainBoots();
-//    std::cout << boots.get_time_for_distance(test_distance) << std::endl;
-//
-//    Broom broom = Broom();
-//    std::cout << broom.get_time_for_distance(test_distance) << std::endl;
-//
-//    MagicCarpet carpet = MagicCarpet();
-//    std::cout << carpet.get_time_for_distance(test_distance) << std::endl;
-//
-//    Eagle eagle = Eagle();
-//    std::cout << eagle.get_time_for_distance(test_distance) << std::endl;
-    
-    // Тестирование процесса гонки
-    Camel camel = Camel();
-    Centaur centaur = Centaur();
-    Game test_game = Game(test_distance, 7, SurfaceType::land);
-
-    test_game.add_player(&camel);
-    test_game.add_player(&centaur);
-    test_game.play();
-    Player* results = test_game.get_players();
-    for (int i=0; i<2; ++i) {
-        std::cout << results[i].vehicle->get_name() << " " << results[i].time << std::endl;
-    }
-    
     // Продакшен-игра
-    UserDialig dialog = UserDialig();
+    UserDialog dialog = UserDialog();
     std::cout << "Добро пожаловать в гоночный симулятор!" << std::endl;
 
     // Выбор типа гонки
@@ -93,8 +52,9 @@ int main(int argc, const char * argv[]) {
             break;
     };
     Game game = Game(distance, 7, game_type);
-    bool game_played = false;
+    
     // регистрация участников
+    bool game_played = false;
     while (!game_played) {
         std::cout << game.get_game_info() << std::endl;
         std::cout << "Должно быть зарегистрировано хотя бы 2 транспортных средства" << std::endl;
@@ -149,7 +109,7 @@ int main(int argc, const char * argv[]) {
                     
                 } catch (WrongPlayerType& e) {
                     std::cout << e.what() << std::endl;
-                } catch (PlayerAlreadyREgistered& e) {
+                } catch (PlayerAlreadyRegistered& e) {
                     std::cout << e.what() << std::endl;
                 }
             }

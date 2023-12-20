@@ -14,9 +14,7 @@
 class FastCamel : public LandVehicle {
     // Верблюд-быстроход
 public:
-    FastCamel() : LandVehicle(40, 10, 8, 5, 6.5) {
-        name = "Верблюд быстроход";
-    }
+    FastCamel();
 };
 
 #endif /* FastCamel_hpp */
