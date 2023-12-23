@@ -33,7 +33,6 @@ class Game {
     // Игра
 protected:
     int distance = 0;
-    int max_players = 0;
     SurfaceType type = SurfaceType::unknown;
     Player* players;
     

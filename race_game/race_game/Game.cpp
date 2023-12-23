@@ -24,10 +24,9 @@ void Game::check_player_alredy_registered(Vehicle* player) {
 }
 
 Game::Game(int distance_, int max_players_, SurfaceType type_) {
-    this->players = new Player[max_players];
     distance = distance_;
-    max_players = max_players_;
     type = type_;
+    this->players = new Player[max_players_];
 }
 
 Game::~Game() {
