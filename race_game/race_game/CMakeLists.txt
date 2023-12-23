@@ -40,4 +40,5 @@ set (HEADERS
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 add_library(RaceLib SHARED ${SOURCES} ${HEADERS})
 add_executable(race main.cpp)
+target_compile_definitions(RaceLib PRIVATE RACELIB_EXPORTS)
 target_link_libraries(race RaceLib)

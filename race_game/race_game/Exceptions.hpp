@@ -5,6 +5,12 @@
 //  Created by tkvitko on 20.12.2023.
 //
 
+#ifdef RACELIB_EXPORTS
+#define RACELIB_API __declspec(dllexport)
+#else
+#define RACELIB_API __declspec(dllimport)
+#endif
+
 #ifndef Exceptions_hpp
 #define Exceptions_hpp
 
